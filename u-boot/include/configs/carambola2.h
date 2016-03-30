@@ -46,8 +46,14 @@
 /* default mtd partition table */
 #undef MTDPARTS_DEFAULT
 
-#define	CONFIG_BOOTARGS     ""
+#define	CONFIG_BOOTARGS     "board=Yun_Shield console=ttyATH0,250000 mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,14656k(rootfs),1280k(kernel),64k(nvram),64k(art),15936k@0x50000(firmware) rootfstype=squashfs,jffs2 noinitrd"
 #define MTDPARTS_DEFAULT    ""
+
+#define CONFIG_EXTRA_ENV_SETTINGS				\
+   "gpio_config=0x18040000:0x2003:0x0/0x18040008:0x2003:0x0\0"	\
+   "led_config=0:0:1:1/1:13:1:1/2:0:1:1/3:0:0:0\0"		\
+   "button_config=0:11:0:0\0"					\
+   ""
 
 #undef CFG_PLL_FREQ
 #define CFG_PLL_FREQ	CFG_PLL_400_400_200
@@ -156,7 +162,7 @@
 #define CFG_ENV_ADDR		0x9f040000
 #define CFG_ENV_SIZE		0x10000
 
-#define CONFIG_BOOTCOMMAND "bootm 0x9f050000"
+#define CONFIG_BOOTCOMMAND "bootm 0x9fEa0000"
 
 /* DDR init values */
 
@@ -266,7 +272,7 @@
 
 #define CONFIG_AUTOBOOT_KEYED
 #define CONFIG_AUTOBOOT_PROMPT 			"Hit '%s' key(s) to stop autoboot: %2d "
-#define CONFIG_AUTOBOOT_STOP_STR 		"\x1B"
+#define CONFIG_AUTOBOOT_STOP_STR 		"ard"
 
 #undef CFG_BAUDRATE_TABLE
 #define CFG_BAUDRATE_TABLE { 300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, 57600, \

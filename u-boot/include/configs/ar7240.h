@@ -7,9 +7,9 @@
 
 #define CONFIG_MIPS32		1  /* MIPS32 CPU core	*/
 
-#define CONFIG_BOOTDELAY	1	/* autoboot after 1 seconds	*/
+#define CONFIG_BOOTDELAY	3	/* autoboot after 1 seconds	*/
 
-#define CONFIG_BAUDRATE		115200 
+#define CONFIG_BAUDRATE		250000
 #define CFG_BAUDRATE_TABLE  { 	115200}
 
 #define	CONFIG_TIMESTAMP		/* Print image info with timestamp */
